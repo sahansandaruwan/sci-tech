@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sci-Tech Companion</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Sci-Tech v2</p>
+        <h1>Formula & Unit Companion</h1>
+        <p class="sub">Offline science toolkit for students</p>
+      </div>
+      <button id="themeBtn" class="icon-btn" type="button" title="Toggle theme">◐</button>
+    </header>
+
+    <section class="quickbar">
+      <input id="globalSearch" type="search" placeholder="Search formulas, constants, units..." autocomplete="off">
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="formulas" type="button">Formulas</button>
+      <button class="tab" data-tab="tools" type="button">Tools</button>
+      <button class="tab" data-tab="units" type="button">Units</button>
+      <button class="tab" data-tab="constants" type="button">Constants</button>
+      <button class="tab" data-tab="saved" type="button">Saved</button>
+    </nav>
+
+    <section id="formulas" class="panel active">
+      <div id="categoryChips" class="chips"></div>
+      <div id="formulaList" class="list"></div>
+    </section>
+
+    <section id="tools" class="panel">
+      <div class="tool-card">
+        <h2>Scientific Calculator</h2>
+        <input id="calcInput" type="text" placeholder="Example: 2*pi*5, sqrt(81), sin(30)">
+        <output id="calcResult" class="result">0</output>
+        <p class="hint">Supports + - × ÷ ^ sqrt sin cos tan log ln pi e. Trig uses degrees.</p>
+      </div>
+
+      <div class="tool-card">
+        <h2>BMI Calculator</h2>
+        <div class="grid-2">
+          <input id="bmiWeight" type="number" placeholder="Weight kg" min="1" step="any">
+          <input id="bmiHeight" type="number" placeholder="Height cm" min="1" step="any">
+        </div>
+        <output id="bmiResult" class="result">Enter weight and height</output>
+      </div>
+
+      <div class="tool-card">
+        <h2>Ohm's Law Solver</h2>
+        <div class="grid-3">
+          <input id="ohmV" type="number" placeholder="V" step="any">
+          <input id="ohmI" type="number" placeholder="I" step="any">
+          <input id="ohmR" type="number" placeholder="R" step="any">
+        </div>
+        <button id="ohmSolve" class="primary" type="button">Solve Missing</button>
+        <output id="ohmResult" class="result">Fill any two values</output>
+      </div>
+    </section>
+
+    <section id="units" class="panel">
+      <div class="tool-card">
+        <div class="grid-2">
+          <label>Type<select id="unitType"></select></label>
+          <label>Value<input id="unitValue" type="number" value="1" step="any"></label>
+        </div>
+        <div class="grid-2">
+          <label>From<select id="fromUnit"></select></label>
+          <label>To<select id="toUnit"></select></label>
+        </div>
+        <output id="unitResult" class="result">1</output>
+        <div id="history" class="history"></div>
+      </div>
+    </section>
+
+    <section id="constants" class="panel">
+      <div id="constantList" class="list"></div>
+    </section>
+
+    <section id="saved" class="panel">
+      <div id="savedList" class="list"></div>
+    </section>
+
+    <footer>
+      <span>Fast • Offline • MV3 Secure</span>
+      <div class="footer-actions">
+        <a class="site-link" href="https://iunitconverters.net/" target="_blank" rel="noopener noreferrer">More converters ↗</a>
+        <button id="clearBtn" class="link-btn" type="button">Clear saved</button>
+      </div>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
